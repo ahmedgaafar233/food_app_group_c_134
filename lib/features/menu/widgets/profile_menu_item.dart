@@ -32,7 +32,7 @@ class ProfileMenuItem extends StatelessWidget {
                 width: 45.w,
                 height: 45.h,
                 decoration: BoxDecoration(
-                  color: (color ?? AppColors.primary).withOpacity(0.1),
+                  color: (color ?? AppColors.primary).withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
                 child: SvgPicture.asset(
@@ -55,7 +55,7 @@ class ProfileMenuItem extends StatelessWidget {
                       padding: EdgeInsets.only(left: 14.w, top: 4.h),
                       child: Text(
                         text1!,
-                        style: TextStyle(color: AppColors.describtion),
+                        style: TextStyle(color: AppColors.description),
                       ),
                     ),
                 ],

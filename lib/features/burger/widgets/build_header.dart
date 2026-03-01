@@ -22,7 +22,7 @@ class BuildHeader extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: AppColors.describtion.withValues(alpha: 0.3)),
+            border: Border.all(color: AppColors.description.withValues(alpha: 0.3)),
           ),
           child: Row(
             children: [
@@ -41,7 +41,7 @@ class BuildHeader extends StatelessWidget {
         const SizedBox(width: 10),
         CircularIconButton(
           iconPath: AppIcons.filter,
-          backgroundColor: AppColors.describtion.withValues(alpha: 0.1),
+          backgroundColor: AppColors.description.withValues(alpha: 0.1),
           // iconColor: AppColors.secondary, // لون أيقونة أبيض
           iconSize: 30, // حجم أصغر شوية ليناسب التصميم
           onPressed: () {

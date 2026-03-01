@@ -55,7 +55,7 @@ class ProductCard extends StatelessWidget {
                     model.description ?? "",
                     style: TextStyles.captionB.copyWith(
                       fontSize: 10.sp,
-                      color: AppColors.describtion,
+                      color: AppColors.description,
                     ),
                   ),
                 ),

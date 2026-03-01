@@ -16,7 +16,7 @@ Column buildRestaurantItem() => Column(
             height: 57,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.r),
-              color: AppColors.describtion,
+              color: AppColors.description,
             ),
           ),
         ),

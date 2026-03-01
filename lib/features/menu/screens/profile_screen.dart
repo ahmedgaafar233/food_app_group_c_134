@@ -57,7 +57,7 @@ class ProfileScreen extends StatelessWidget {
                     Text(
                       "I love fast food",
                       style: TextStyles.caption.copyWith(
-                        color: AppColors.describtion,
+                        color: AppColors.description,
                       ),
                     ),
                   ],

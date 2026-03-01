@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/core/styles/app_colors.dart';
-import 'package:food_app/core/styles/text_styles.dart';
-import 'package:food_app/core/widgets/custom_button.dart';
-import 'package:food_app/features/track_order/widgets/buttons.dart';
 import 'package:food_app/features/track_order/widgets/product_track_card.dart';
 
 class OngoingScreen extends StatefulWidget {
   const OngoingScreen({super.key});
 
   @override
-  State<OngoingScreen> createState() => _OnginigScreenState();
+  State<OngoingScreen> createState() => _OngoingScreenState();
 }
 
-class _OnginigScreenState extends State<OngoingScreen> {
+class _OngoingScreenState extends State<OngoingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +18,7 @@ class _OnginigScreenState extends State<OngoingScreen> {
           child: Column(
             children: [
               ProductTrackCard(
-                numberofindex: 0,
+                itemIndex: 0,
                 category: 'Food',
                 itemsCount: '2 items',
                 orderNumber: '162432',
@@ -31,7 +27,7 @@ class _OnginigScreenState extends State<OngoingScreen> {
               ),
               SizedBox(height: 20),
               ProductTrackCard(
-                numberofindex: 0,
+                itemIndex: 0,
                 category: 'Desserts',
                 itemsCount: '5 items',
                 orderNumber: '#242432',
@@ -40,7 +36,7 @@ class _OnginigScreenState extends State<OngoingScreen> {
               ),
               SizedBox(height: 20),
               ProductTrackCard(
-                numberofindex: 0,
+                itemIndex: 0,
                 category: 'Drinks',
                 itemsCount: '3 items',
                 orderNumber: '#947432',

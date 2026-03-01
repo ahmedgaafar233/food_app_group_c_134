@@ -4,7 +4,6 @@ import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/widgets/custom_button.dart';
-import 'package:food_app/features/home/screens/home_screen.dart';
 import 'package:food_app/features/track_order/screens/track_order_screen.dart';
 
 class CongratsScreen extends StatelessWidget {
@@ -42,7 +41,7 @@ class CongratsScreen extends StatelessWidget {
                 Text(
                   'You successfully made a payment,\nenjoy our service!',
                   style: TextStyles.caption.copyWith(
-                    color: AppColors.describtion,
+                    color: AppColors.description,
                   ),
                   textAlign: TextAlign.center,
                 ),

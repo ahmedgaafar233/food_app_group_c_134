@@ -32,7 +32,7 @@ class SearchScreen extends StatelessWidget {
                       height: 45.h,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40.r),
-                        color: AppColors.ingridents,
+                        color: AppColors.ingredients,
                       ),
                       child: const CustomBackButton(
                         backgroundColor: AppColors.iceBlue,

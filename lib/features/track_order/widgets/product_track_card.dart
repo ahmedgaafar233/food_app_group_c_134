@@ -10,7 +10,7 @@ class ProductTrackCard extends StatelessWidget {
     required this.restaurantName,
     required this.price,
     required this.itemsCount,
-    required this.orderNumber, required this.numberofindex,
+    required this.orderNumber, required this.itemIndex,
   });
   final String category;
   // final String imageUrl;
@@ -18,7 +18,7 @@ class ProductTrackCard extends StatelessWidget {
   final String price;
   final String itemsCount;
   final String orderNumber;
-  final int numberofindex;
+  final int itemIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class ProductTrackCard extends StatelessWidget {
                   height: 70,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color: AppColors.describtion,
+                    color: AppColors.description,
                   ),
                   // child: /* image will be here,*/,
                 ),
@@ -79,7 +79,7 @@ class ProductTrackCard extends StatelessWidget {
             ),
 
             SizedBox(height: 25),
-            ButtonCollection(index: numberofindex),
+            ButtonCollection(index: itemIndex),
           ],
         ),
       ],

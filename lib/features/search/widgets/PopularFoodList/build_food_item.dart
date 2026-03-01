@@ -22,7 +22,7 @@ Stack buildFoodItem() => Stack(
               Center(
                 child: Text(
                   "Uttora Coffe House",
-                  style: TextStyle(fontSize: 12, color: AppColors.describtion),
+                  style: TextStyle(fontSize: 12, color: AppColors.description),
                 ),
               ),
             ],
@@ -37,7 +37,7 @@ Stack buildFoodItem() => Stack(
         height: 84,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
-          color: AppColors.describtion,
+          color: AppColors.description,
         ),
       ),
     ),

@@ -63,7 +63,7 @@ class AddressCard extends StatelessWidget {
                 Text(
                   fullAddress,
                   style: TextStyle(
-                    color: AppColors.describtion,
+                    color: AppColors.description,
                     fontSize: 12.sp,
                     height: 1.4,
                   ),

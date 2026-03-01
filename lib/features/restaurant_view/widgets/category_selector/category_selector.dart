@@ -45,7 +45,7 @@ class _CategorySelectorState extends State<CategorySelector> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25.r),
           color: selectedIndex == index ? AppColors.primary : AppColors.white,
-          boxShadow: [BoxShadow(color: AppColors.describtion, blurRadius: 3)],
+          boxShadow: [BoxShadow(color: AppColors.description, blurRadius: 3)],
         ),
         child: Center(
           child: Text(

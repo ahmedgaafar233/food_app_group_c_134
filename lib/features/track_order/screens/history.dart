@@ -18,7 +18,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
           child: Column(
             children: [
               ProductTrackCard(
-                numberofindex: 1,
+                itemIndex: 1,
                 category: 'Food',
                 itemsCount: '2 items',
                 orderNumber: '162432',
@@ -27,7 +27,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
               ),
               SizedBox(height: 20),
               ProductTrackCard(
-                numberofindex: 1,
+                itemIndex: 1,
                 category: 'Desserts',
                 itemsCount: '5 items',
                 orderNumber: '#242432',
@@ -36,7 +36,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
               ),
               SizedBox(height: 20),
               ProductTrackCard(
-                numberofindex: 1,
+                itemIndex: 1,
                 category: 'Drinks',
                 itemsCount: '3 items',
                 orderNumber: '#947432',

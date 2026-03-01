@@ -9,7 +9,7 @@ import 'package:food_app/core/widgets/container_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
 import 'package:food_app/core/widgets/custom_button.dart';
 import 'package:food_app/features/cart/screens/cart_screen.dart';
-import 'package:food_app/features/food_details_02/widgets/ingridents.dart';
+import 'package:food_app/features/food_details_02/widgets/ingredients.dart';
 import 'package:food_app/features/food_details_02/widgets/product_counter.dart';
 import 'package:food_app/features/food_details_02/widgets/radio_button.dart';
 import 'package:food_app/features/restaurant_view/screen/restaurant_screen.dart';
@@ -98,7 +98,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                     Text(
                       'Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
                       style: TextStyles.captionB.copyWith(
-                        color: AppColors.describtion,
+                        color: AppColors.description,
                       ),
                     ),
                     SizedBox(height: 30),
@@ -107,7 +107,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                         Text(
                           'SIZE: ',
                           style: TextStyles.captionB.copyWith(
-                            color: AppColors.describtion,
+                            color: AppColors.description,
                           ),
                         ),
                         SizedBox(width: 10),
@@ -122,11 +122,11 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       child: Row(
                         spacing: 33,
                         children: [
-                          Ingridents(icon: AppIcons.salt),
-                          Ingridents(icon: AppIcons.chicken),
-                          Ingridents(icon: AppIcons.onion),
-                          Ingridents(icon: AppIcons.thom),
-                          Ingridents(icon: AppIcons.papper),
+                          Ingredients(icon: AppIcons.salt),
+                          Ingredients(icon: AppIcons.chicken),
+                          Ingredients(icon: AppIcons.onion),
+                          Ingredients(icon: AppIcons.thom),
+                          Ingredients(icon: AppIcons.papper),
                         ],
                       ),
                     ),

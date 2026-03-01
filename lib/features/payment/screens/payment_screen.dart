@@ -72,7 +72,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     Text(
                       'You can add a MasterCard and\nsave it for later',
                       style: TextStyles.caption.copyWith(
-                        color: AppColors.describtion,
+                        color: AppColors.description,
                       ),
                       textAlign: TextAlign.center,
                     ),

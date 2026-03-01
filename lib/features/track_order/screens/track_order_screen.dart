@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/widgets/container_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
-import 'package:custom_sliding_segmented_control/custom_sliding_segmented_control.dart';
 import 'package:food_app/features/track_order/screens/history.dart';
 import 'package:food_app/features/track_order/screens/ongoing.dart';
 
@@ -33,7 +31,7 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
                 child: Text(
                   "Ongoing",
                   style: TextStyles.body3.copyWith(
-                    color: AppColors.describtion,
+                    color: AppColors.description,
                   ),
                 ),
               ),
@@ -41,7 +39,7 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
                 child: Text(
                   "History",
                   style: TextStyles.body3.copyWith(
-                    color: AppColors.describtion,
+                    color: AppColors.description,
                   ),
                 ),
               ),

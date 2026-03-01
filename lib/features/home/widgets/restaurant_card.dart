@@ -73,7 +73,7 @@ class RestaurantCard extends StatelessWidget {
                   Text(
                     tags,
                     style: TextStyles.caption.copyWith(
-                      color: AppColors.describtion,
+                      color: AppColors.description,
                       fontSize: 14.sp,
                     ),
                   ),

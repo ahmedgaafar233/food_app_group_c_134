@@ -59,7 +59,7 @@ class RestaurantScreen extends StatelessWidget {
                   Text(
                     'Maecenas sed diam eget risus varius blandit sit omet non magna. Integer posuere erat a ante venenatis dopibus posuere velit aliquet.',
                     style: TextStyles.captionB.copyWith(
-                      color: AppColors.describtion,
+                      color: AppColors.description,
                       fontSize: 12,
                     ),
                   ),
