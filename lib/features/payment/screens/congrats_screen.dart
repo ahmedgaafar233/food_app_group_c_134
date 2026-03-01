@@ -5,6 +5,7 @@ import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/widgets/custom_button.dart';
 import 'package:food_app/features/home/screens/home_screen.dart';
+import 'package:food_app/features/track_order/screens/track_order_screen.dart';
 
 class CongratsScreen extends StatelessWidget {
   const CongratsScreen({super.key});
@@ -36,10 +37,7 @@ class CongratsScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 24.h),
-                Text(
-                  'Congratulations!',
-                  style: TextStyles.body,
-                ),
+                Text('Congratulations!', style: TextStyles.body),
                 SizedBox(height: 12.h),
                 Text(
                   'You successfully made a payment,\nenjoy our service!',
@@ -58,7 +56,7 @@ class CongratsScreen extends StatelessWidget {
         child: CustomButton(
           text: 'TRACK ORDER',
           onPressed: () {
-            pushReplacementTo(context, const HomeScreen());
+            pushReplacementTo(context, const TrackOrderScreen());
           },
         ),
       ),

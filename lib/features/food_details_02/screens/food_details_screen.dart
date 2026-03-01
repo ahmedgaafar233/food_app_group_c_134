@@ -78,7 +78,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       child: Row(
                         children: [
                           Image.asset(
-                            AppIcons.chefLogo,
+                            AppImages.resturantLogo,
                             width: 22.w,
                             height: 22.h,
                           ),
