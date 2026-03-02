@@ -43,3 +43,18 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# External Tools and Large Binaries
+*.AppImage
+squashfs-root/
+*.zip
+*.tar.gz
+*.dmg
+*.exe
+*.apk
+!/screenshots/*.jpeg
+!/assets/icons/*.png
+!/assets/icons/*.svg
+!/assets/images/*.png
+!/assets/images/*.svg
+
