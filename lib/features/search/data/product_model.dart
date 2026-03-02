@@ -62,6 +62,18 @@ List<ProductModel> productCard = [
     price: "\$40",
     description: "Cafecafachino",
   ),
+  ProductModel(
+    id: "33",
+    name: "Beef Burger",
+    price: "\$45",
+    description: "Burger Factory",
+  ),
+  ProductModel(
+    id: "34",
+    name: "Chicken Burger",
+    price: "\$35",
+    description: "Tasty Burger",
+  ),
 ];
 
 List<ProductModel> addressKeywords = [

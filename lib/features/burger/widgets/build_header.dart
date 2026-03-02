@@ -1,9 +1,9 @@
-// ignore_for_file: non_constant_identifier_names
-
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_icons.dart';
+import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/circular_icon_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
 
@@ -35,17 +35,16 @@ class BuildHeader extends StatelessWidget {
         CircularIconButton(
           iconPath: AppIcons.search,
           backgroundColor: AppColors.secondary,
-          // iconColor: Colors.white,
+          iconColor: Colors.white,
           iconSize: 20,
         ),
         const SizedBox(width: 10),
         CircularIconButton(
           iconPath: AppIcons.filter,
-          backgroundColor: AppColors.description.withValues(alpha: 0.1),
-          // iconColor: AppColors.secondary, // لون أيقونة أبيض
-          iconSize: 30, // حجم أصغر شوية ليناسب التصميم
+          backgroundColor: Colors.blueGrey.withValues(alpha: 0.1),
+          iconSize: 22,
           onPressed: () {
-            // Search logic
+            // Filter logic
           },
         ),
       ],

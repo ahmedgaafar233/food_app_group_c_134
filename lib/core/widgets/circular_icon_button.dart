@@ -6,6 +6,7 @@ class CircularIconButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final Color backgroundColor;
   final double iconSize;
+  final Color? iconColor;
 
   const CircularIconButton({
     super.key,
@@ -13,6 +14,7 @@ class CircularIconButton extends StatelessWidget {
     this.onPressed,
     this.backgroundColor = const Color(0xFFF0F5FA),
     this.iconSize = 20,
+    this.iconColor,
   });
 
   @override
@@ -29,7 +31,9 @@ class CircularIconButton extends StatelessWidget {
           iconPath,
           width: iconSize,
           height: iconSize,
-          colorFilter: const ColorFilter.mode(Color(0xFF181C2E), BlendMode.srcIn), // Ensure icon respects design
+          colorFilter: iconColor != null
+              ? ColorFilter.mode(iconColor!, BlendMode.srcIn)
+              : null,
         ),
       ),
     );

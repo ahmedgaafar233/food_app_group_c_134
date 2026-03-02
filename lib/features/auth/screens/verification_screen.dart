@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/widgets/custom_button.dart';
@@ -20,9 +21,9 @@ class VerificationScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
             
-            // Code inputs and resend
+             // Code inputs and resend
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -30,7 +31,7 @@ class VerificationScreen extends StatelessWidget {
                     'CODE',
                     style: GoogleFonts.sen(
                       color: const Color(0xFF32343E), // dark text
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -40,7 +41,7 @@ class VerificationScreen extends StatelessWidget {
                         'Resend',
                         style: GoogleFonts.sen(
                           color: const Color(0xFF32343E), // dark text
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           decoration: TextDecoration.underline,
                           decorationColor: const Color(0xFF32343E),
                         ),
@@ -49,15 +50,15 @@ class VerificationScreen extends StatelessWidget {
                         ' in 50sec',
                         style: GoogleFonts.sen(
                           color: const Color(0xFF7E8CA0), // grey text
-                          fontSize: 14,
+                          fontSize: 14.sp,
                         ),
                       ),
                     ],
-                 )
+                 ),
               ],
             ),
             
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             
             OtpTextField(
               numberOfFields: 4,
@@ -66,32 +67,30 @@ class VerificationScreen extends StatelessWidget {
               enabledBorderColor: Colors.transparent,
               fillColor: const Color(0xFFF0F5FA),
               filled: true,
+              autoFocus: true,
               textStyle: GoogleFonts.sen(
                 color: Colors.black,
-                fontSize: 24,
+                fontSize: 24.sp,
                 fontWeight: FontWeight.bold,
               ),
               showFieldAsBox: true,
-              fieldWidth: 60,
-              borderRadius: BorderRadius.circular(10),
+              fieldWidth: 60.w,
+              borderRadius: BorderRadius.circular(10.r),
               keyboardType: TextInputType.number,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              onCodeChanged: (String code) {
-                // Handle validation or checks when code changes
-              },
-              onSubmit: (String verificationCode){
-                // Automatically move to the next screen when the code is completed
+              onCodeChanged: (String code) {},
+              onSubmit: (String verificationCode) {
                 pushReplacementTo(context, const HomeScreen());
               },
             ),
             
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
             
             CustomButton(
               text: 'VERIFY',
               onPressed: () {},
             ),
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
           ],
         ),
       ),

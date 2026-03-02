@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
+import 'package:food_app/core/utils/app_icons.dart';
 import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/container_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
@@ -45,7 +47,7 @@ class RestaurantScreen extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -54,13 +56,13 @@ class RestaurantScreen extends StatelessWidget {
 
                   Text(
                     'Spicy Restaurant',
-                    style: TextStyles.body.copyWith(fontSize: 20),
+                    style: TextStyles.body.copyWith(fontSize: 20.sp),
                   ),
                   Text(
                     'Maecenas sed diam eget risus varius blandit sit omet non magna. Integer posuere erat a ante venenatis dopibus posuere velit aliquet.',
                     style: TextStyles.captionB.copyWith(
                       color: AppColors.description,
-                      fontSize: 12,
+                      fontSize: 12.sp,
                     ),
                   ),
                 ],
@@ -68,16 +70,20 @@ class RestaurantScreen extends StatelessWidget {
             ),
             CategorySelector(),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(right: 190, top: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
                   child: Text(
                     'Burger (10)',
-                    style: TextStyles.body.copyWith(fontSize: 15),
+                    style: TextStyles.body.copyWith(
+                      fontSize: 16.sp,
+                      color: const Color(0xFF32343E),
+                    ),
                   ),
                 ),
-
-                FoodCardList(),
+                const FoodCardList(),
+                SizedBox(height: 30.h),
               ],
             ),
           ],

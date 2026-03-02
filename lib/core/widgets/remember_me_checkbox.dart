@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RememberMeCheckbox extends StatefulWidget {
@@ -39,29 +40,29 @@ class _RememberMeCheckboxState extends State<RememberMeCheckbox> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            width: 20,
-            height: 20,
+            width: 20.w,
+            height: 20.w,
             decoration: BoxDecoration(
               color: isChecked ? const Color(0xFFFF7622) : Colors.transparent,
               border: Border.all(
-                color: isChecked ? const Color(0xFFFF7622) : Colors.grey,
+                color: isChecked ? const Color(0xFFFF7622) : const Color(0xFFE8EAED),
               ),
-              borderRadius: BorderRadius.circular(4),
+              borderRadius: BorderRadius.circular(5.r),
             ),
             child: isChecked
-                ? const Icon(
+                ? Icon(
                     Icons.check,
-                    size: 14,
+                    size: 14.sp,
                     color: Colors.white,
                   )
                 : null,
           ),
-          const SizedBox(width: 8),
+          SizedBox(width: 8.w),
           Text(
             'Remember me',
             style: GoogleFonts.sen(
               color: const Color(0xFF7E8CA0),
-              fontSize: 14,
+              fontSize: 14.sp,
             ),
           ),
         ],

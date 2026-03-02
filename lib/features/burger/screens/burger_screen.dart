@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/utils/app_images.dart';
@@ -8,7 +9,7 @@ import 'package:food_app/core/widgets/burger_card.dart';
 import 'package:food_app/core/widgets/section_header.dart';
 import 'package:food_app/features/food_details_02/screens/food_details_screen.dart';
 import 'package:food_app/features/burger/widgets/build_header.dart';
-import 'package:food_app/features/burger/widgets/restaurant_card.dart';
+import 'package:food_app/core/widgets/restaurant_card.dart';
 
 class BurgersScreen extends StatelessWidget {
   const BurgersScreen({super.key});
@@ -19,25 +20,25 @@ class BurgersScreen extends StatelessWidget {
       backgroundColor: AppColors.greyLite,
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // --- Custom Header (Top Row) ---
               BuildHeader(context: context),
 
-              const SizedBox(height: 25),
+              SizedBox(height: 25.h),
 
               // --- Popular Burgers Section ---
               const SectionHeader(title: "Popular Burgers"),
-              const SizedBox(height: 15),
+              SizedBox(height: 15.h),
 
               GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
+                crossAxisSpacing: 15.w,
+                mainAxisSpacing: 15.h,
                 childAspectRatio: 0.75, // ضبط تناسق الطول مع العرض
                 children: [
                   BurgerCard(
@@ -75,13 +76,20 @@ class BurgersScreen extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 30),
+              SizedBox(height: 30.h),
 
               // --- Open Restaurants Section ---
               const SectionHeader(title: "Open Restaurants"),
-              const SizedBox(height: 15),
+              SizedBox(height: 15.h),
 
-              RestaurantCard(context: context),
+              RestaurantCard(
+                imageUrl: "",
+                name: "Tasty Treat Gallery",
+                tags: "Pasta - Healthy - Pizza - Drinks",
+                rating: "4.7",
+                deliveryFee: "Free",
+                deliveryTime: "20 min",
+              ),
             ],
           ),
         ),

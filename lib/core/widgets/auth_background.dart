@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:food_app/core/utils/app_icons.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
@@ -30,7 +31,7 @@ class AuthBackground extends StatelessWidget {
             left: 0,
             child: SvgPicture.asset(
               AppIcons.background1,
-              width: 150,
+              width: 150.w,
             ),
           ),
           
@@ -40,7 +41,7 @@ class AuthBackground extends StatelessWidget {
             right: 0,
             child: SvgPicture.asset(
               'assets/icons/Vector 142.svg',
-              width: 150,
+              width: 150.w,
             ),
           ),
           
@@ -52,12 +53,12 @@ class AuthBackground extends StatelessWidget {
                   Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 24.0, top: 10),
+                      padding: EdgeInsets.only(left: 24.w, top: 10.h),
                       child: const CustomBackButton(),
                     ),
                   )
                 else
-                  const SizedBox(height: 50),
+                  SizedBox(height: 50.h),
                   
                 // Title and Subtitle
                 Center(
@@ -67,16 +68,16 @@ class AuthBackground extends StatelessWidget {
                         title,
                         style: GoogleFonts.sen(
                           color: Colors.white,
-                          fontSize: 30,
+                          fontSize: 30.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 8),
+                      SizedBox(height: 8.h),
                       Text(
                         subtitle,
                         style: GoogleFonts.sen(
                           color: Colors.white70,
-                          fontSize: 16,
+                          fontSize: 16.sp,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -84,17 +85,17 @@ class AuthBackground extends StatelessWidget {
                   ),
                 ),
                 
-                const SizedBox(height: 30),
+                SizedBox(height: 30.h),
                 
                 // White container for body
                 Expanded(
                   child: Container(
                     width: double.infinity,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
                     ),
-                    padding: const EdgeInsets.all(24.0),
+                    padding: EdgeInsets.all(24.r),
                     child: content,
                   ),
                 ),

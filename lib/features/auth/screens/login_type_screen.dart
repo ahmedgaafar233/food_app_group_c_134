@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/widgets/auth_background.dart';
@@ -37,10 +38,10 @@ class LoginTypeScreen extends StatelessWidget {
               label: 'PASSWORD',
               hint: '123456789', // Show text
               obscureText: false,
-              suffixIcon: SvgPicture.asset('assets/icons/unseen.svg', width: 24, height: 24),
+              suffixIcon: SvgPicture.asset('assets/icons/unseen.svg', width: 24.w, height: 24.h),
             ),
             
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,7 +72,7 @@ class LoginTypeScreen extends StatelessWidget {
               ],
             ),
             
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             // Login Button
             CustomButton(
               text: 'Log In',
@@ -80,7 +81,7 @@ class LoginTypeScreen extends StatelessWidget {
               },
             ),
             
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -113,7 +114,7 @@ class LoginTypeScreen extends StatelessWidget {
               ],
             ),
             
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Text(
               'Or',
               style: GoogleFonts.sen(
@@ -121,9 +122,9 @@ class LoginTypeScreen extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             const SocialLoginRow(),
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
           ],
         ),
       ),

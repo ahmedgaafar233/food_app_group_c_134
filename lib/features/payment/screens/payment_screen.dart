@@ -16,6 +16,18 @@ class PaymentScreen extends StatefulWidget {
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
+  int _selectedIndex = 2; // Default: MasterCard selected
+
+  final List<String> _categories = ['Cash', 'Visa', 'MasterCard', 'PayPal'];
+  final List<String> _icons = [
+    'assets/icons/cash.svg',
+    'assets/icons/visa.svg',
+    'assets/icons/mastercard.svg',
+    'assets/icons/paypal.svg',
+  ];
+
+  String get _selectedCategory => _categories[_selectedIndex];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,28 +40,31 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 children: [
                   CustomBackButton(
                     backgroundColor: AppColors.lightGrey,
-                    onPressed: () {
-                      pop(context);
-                    },
+                    onPressed: () => pop(context),
                   ),
                   SizedBox(width: 20.w),
                   Text('Payment', style: TextStyles.body),
                 ],
               ),
               SizedBox(height: 40.h),
+
+              // Payment method selector
               CategoryList(
-                icons: const [
-                  'assets/icons/cash.svg',
-                  'assets/icons/visa.svg',
-                  'assets/icons/mastercard.svg',
-                  'assets/icons/paypal.svg',
-                ],
-                categories: const ['Cash', 'Visa', 'MasterCard', 'PayPal'],
+                icons: _icons,
+                categories: _categories,
+                selectedIndex: _selectedIndex,
+                onCategoryTap: (category) {
+                  setState(() {
+                    _selectedIndex = _categories.indexOf(category);
+                  });
+                },
               ),
+
               SizedBox(height: 20.h),
+
+              // Card area
               Container(
                 width: double.infinity,
-                height: 300.h,
                 padding: EdgeInsets.symmetric(vertical: 16.h),
                 decoration: BoxDecoration(
                   color: AppColors.lightGrey,
@@ -58,6 +73,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SizedBox(height: 12.h),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(16.r),
                       child: Image.asset(
@@ -67,35 +83,57 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       ),
                     ),
                     SizedBox(height: 20.h),
-                    Text('No MasterCard added', style: TextStyles.body2),
+                    Text(
+                      'No $_selectedCategory added',
+                      style: TextStyles.body2,
+                    ),
                     SizedBox(height: 8.h),
                     Text(
-                      'You can add a MasterCard and\nsave it for later',
+                      'You can add a $_selectedCategory and\nsave it for later',
                       style: TextStyles.caption.copyWith(
                         color: AppColors.description,
                       ),
                       textAlign: TextAlign.center,
                     ),
+                    SizedBox(height: 12.h),
                   ],
                 ),
               ),
-              SizedBox(height: 20.h),
-              Container(
-                width: double.infinity,
-                height: 62.h,
-                decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.lightGrey),
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-                child: Center(
-                  child: Text(
-                    'Add MasterCard',
-                    style: TextStyles.body2.copyWith(color: AppColors.primary),
+
+              SizedBox(height: 16.h),
+
+              // + ADD NEW button (matches Figma design)
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  width: double.infinity,
+                  height: 62.h,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.lightGrey),
+                    color: Colors.transparent,
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                  child: Center(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.add, color: AppColors.primary, size: 18.r),
+                        SizedBox(width: 6.w),
+                        Text(
+                          'ADD NEW',
+                          style: TextStyles.body2.copyWith(
+                            color: AppColors.primary,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
+
               const Spacer(),
+
+              // Total & Pay button
               CustomButton(
                 text: 'PAY & CONFIRM',
                 onPressed: () {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter_svg/flutter_svg.dart'; 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/utils/app_icons.dart';
 
@@ -17,7 +18,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 10), () {
       pushReplacementTo(context, LoginEmptyScreen());
      
     });
@@ -65,7 +66,7 @@ class _SplashViewState extends State<SplashView> {
               children: [
                 
                
-                buildImage(AppIcons.foodLogo, width: 200),
+                buildImage(AppIcons.foodLogo, width: 200.w),
               ],
             ),
           ),

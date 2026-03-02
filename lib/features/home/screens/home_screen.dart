@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/features/burger/screens/burger_screen.dart';
 import 'package:food_app/features/search/screen/search_screen.dart';
@@ -11,9 +12,10 @@ import 'package:food_app/core/widgets/category_list.dart';
 import 'package:food_app/core/widgets/circular_icon_button.dart';
 import 'package:food_app/core/widgets/location_header_dropdown.dart';
 import 'package:food_app/features/address/screens/my_address_screen.dart';
-import 'package:food_app/features/home/widgets/restaurant_card.dart';
+import 'package:food_app/core/widgets/restaurant_card.dart';
 import 'package:food_app/features/menu/screens/profile_screen.dart';
 import 'package:food_app/features/restaurant_view/screen/restaurant_screen.dart';
+import 'package:food_app/features/cart/screens/cart_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -25,9 +27,9 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 24.0,
-              vertical: 16.0,
+            padding: EdgeInsets.symmetric(
+              horizontal: 24.0.w,
+              vertical: 16.0.h,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,8 +45,8 @@ class HomeScreen extends StatelessWidget {
                       },
                     ),
 
-                    const SizedBox(
-                      width: 4,
+                    SizedBox(
+                      width: 4.w,
                     ), // 4 pixels left padding to perfectly align text starting at (X = 48)
                     // Location
                     Expanded(
@@ -63,13 +65,13 @@ class HomeScreen extends StatelessWidget {
                       iconPath: AppImages.shoppingBag,
                       itemCount: 2, // Matches Figma design count
                       onPressed: () {
-                        // TODO: Navigate to cart
+                         pushTo(context, const CartScreen());
                       },
                     ),
                   ],
                 ),
 
-                const SizedBox(height: 24),
+                SizedBox(height: 24.h),
 
                 // Greeting text
                 Text.rich(
@@ -77,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                     text: 'Hey Halal, ',
                     style: GoogleFonts.sen(
                       color: const Color(0xFF32343E),
-                      fontSize: 16,
+                      fontSize: 16.sp,
                     ),
                     children: [
                       TextSpan(
@@ -88,7 +90,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 // Search Bar Placeholder
                 SearchField(

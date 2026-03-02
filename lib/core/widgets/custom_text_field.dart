@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextField extends StatefulWidget {
@@ -45,8 +46,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
       activeSuffixIcon = IconButton(
         icon: SvgPicture.asset(
           _obscured ? 'assets/icons/unseen.svg' : 'assets/icons/eye.svg',
-          width: 24,
-          height: 24,
+          width: 24.w,
+          height: 24.h,
         ),
         tooltip: _obscured ? 'Show password' : 'Hide password',
         onPressed: () {
@@ -59,7 +60,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
     if (activeSuffixIcon != null) {
       activeSuffixIcon = Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: EdgeInsets.all(12.r),
         child: activeSuffixIcon,
       );
     }
@@ -72,34 +73,34 @@ class _CustomTextFieldState extends State<CustomTextField> {
             widget.label!.toUpperCase(),
             style: GoogleFonts.sen(
               color: const Color(0xFF32343E),
-              fontSize: 13,
+              fontSize: 13.sp,
               fontWeight: FontWeight.w400,
             ),
           ),
-        if (widget.label != null) const SizedBox(height: 8),
+        if (widget.label != null) SizedBox(height: 8.h),
         TextFormField(
           controller: widget.controller,
           validator: widget.validator,
           obscureText: _obscured,
           maxLines: _obscured ? 1 : widget.maxLines,
           keyboardType: widget.keyboardType,
-          style: GoogleFonts.sen(color: Colors.black, fontSize: 16),
+          style: GoogleFonts.sen(color: Colors.black, fontSize: 16.sp),
           decoration: InputDecoration(
             hintText: widget.hint,
             hintStyle: GoogleFonts.sen(
               color: const Color(0xFFA0A5BA),
-              fontSize: 14,
+              fontSize: 14.sp,
             ),
             suffixIcon: activeSuffixIcon,
             filled: true,
             fillColor: const Color(0xFFF0F5FA),
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.r),
               borderSide: BorderSide.none,
             ),
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 16,
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: 16.w,
+              vertical: 16.h,
             ),
           ),
         ),

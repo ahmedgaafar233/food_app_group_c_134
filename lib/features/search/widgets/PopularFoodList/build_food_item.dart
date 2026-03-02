@@ -1,45 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/styles/app_colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-Stack buildFoodItem() => Stack(
-  children: [
-    Padding(
-      padding: const EdgeInsets.symmetric(vertical: 25),
-      child: Container(
-        width: 153,
-        height: 122,
+Widget buildFoodItem() => Container(
+  width: 153.w,
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(24.r),
+    color: Colors.white,
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black.withOpacity(0.05),
+        blurRadius: 10,
+        offset: const Offset(0, 5),
+      ),
+    ],
+  ),
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Container(
+        height: 120.h,
+        width: double.infinity,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r),
-          color: AppColors.greyLite,
+          borderRadius: BorderRadius.circular(24.r),
+          color: AppColors.description, // Image placeholder
         ),
-        child: Padding(
-          padding: EdgeInsets.only(bottom: 15.h),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text("European Pizza"),
-              Center(
-                child: Text(
-                  "Uttora Coffe House",
-                  style: TextStyle(fontSize: 12, color: AppColors.description),
-                ),
+      ),
+      Padding(
+        padding: EdgeInsets.all(12.r),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "European Pizza",
+              style: GoogleFonts.sen(
+                fontSize: 15.sp,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xFF32343E),
               ),
-            ],
-          ),
+            ),
+            SizedBox(height: 4.h),
+            Text(
+              "Uttora Coffe House",
+              style: GoogleFonts.sen(
+                fontSize: 12.sp,
+                color: const Color(0xFF646982),
+              ),
+            ),
+          ],
         ),
       ),
-    ),
-    Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 14),
-      child: Container(
-        width: 122,
-        height: 84,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r),
-          color: AppColors.description,
-        ),
-      ),
-    ),
-  ],
+    ],
+  ),
 );

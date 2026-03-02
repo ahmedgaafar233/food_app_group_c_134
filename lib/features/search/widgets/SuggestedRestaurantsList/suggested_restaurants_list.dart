@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/features/search/widgets/SuggestedRestaurantsList/build_restaurant_item.dart';
 
 class SuggestedRestaurantsList extends StatelessWidget {
@@ -7,14 +8,15 @@ class SuggestedRestaurantsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 1,
-        crossAxisSpacing: 10,
-        childAspectRatio: 3,
+        mainAxisSpacing: 16.h,
+        mainAxisExtent: 82.h,
       ),
       itemCount: 3,
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
       itemBuilder: (context, index) {
         return buildRestaurantItem();
       },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:food_app/core/utils/app_icons.dart';
@@ -30,49 +31,48 @@ class SearchField extends StatelessWidget {
       readOnly: readOnly,
       onTap: onTap,
       onChanged: onChanged,
-      style: GoogleFonts.sen(color: const Color(0xFF32343E), fontSize: 14),
+      style: GoogleFonts.sen(color: const Color(0xFF32343E), fontSize: 14.sp),
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: GoogleFonts.sen(
           color: const Color(0xFFA0A5BA),
-          fontSize: 14,
+          fontSize: 14.sp,
         ),
         filled: true,
         fillColor: const Color(0xFFF0F5FA),
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 16,
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: 16.w,
+          vertical: 14.h, // Adjusted to target 49h total (14*2 + 14 + line_height_buffer)
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.r),
           borderSide: BorderSide.none,
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.r),
           borderSide: BorderSide.none,
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.r),
           borderSide: BorderSide.none,
         ),
         prefixIcon: Padding(
-          padding: const EdgeInsets.only(left: 16, right: 12),
+          padding: EdgeInsets.only(left: 16.w, right: 12.w),
           child:
               prefixIcon ??
               SvgPicture.asset(
-                AppIcons
-                    .search, // Replace with your standard search icon if needed
-                width: 20,
-                height: 20,
+                AppIcons.search,
+                width: 20.w,
+                height: 20.h,
                 colorFilter: const ColorFilter.mode(
                   Color(0xFF7E8CA0),
                   BlendMode.srcIn,
                 ),
               ),
         ),
-        prefixIconConstraints: const BoxConstraints(
-          minWidth: 48,
-          minHeight: 20,
+        prefixIconConstraints: BoxConstraints(
+          minWidth: 48.w,
+          minHeight: 20.h,
         ),
         suffixIcon: suffixIcon,
       ),

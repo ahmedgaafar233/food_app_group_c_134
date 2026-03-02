@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
@@ -38,11 +39,11 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       Container(
                         decoration: BoxDecoration(
                           color: AppColors.imageBackground,
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(30.r),
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadiusGeometry.vertical(
-                            bottom: Radius.circular(30),
+                            bottom: Radius.circular(30.r),
                           ),
                           child: Image.asset(AppImages.picture1),
                         ),
@@ -50,7 +51,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(25, 50, 25, 0),
+                    padding: EdgeInsets.fromLTRB(25.w, 50.h, 25.w, 0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -67,7 +68,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(25.0, 25.0, 25.0, 0),
+                padding: EdgeInsets.fromLTRB(25.0.w, 25.0.h, 25.0.w, 0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,11 +79,11 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       child: Row(
                         children: [
                           Image.asset(
-                            AppImages.resturantLogo,
-                            width: 22.w,
-                            height: 22.h,
+                            'assets/icons/2.png',
+                            width: 25.w,
+                            height: 25.h,
                           ),
-                          SizedBox(width: 8.w),
+                          SizedBox(width: 10.w),
                           Text(
                             'Rose Garden',
                             style: TextStyles.captionB.copyWith(
@@ -92,16 +93,16 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     RestaurantInfoRow(),
-                    SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                     Text(
                       'Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
                       style: TextStyles.captionB.copyWith(
                         color: AppColors.description,
                       ),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                     Row(
                       children: [
                         Text(
@@ -110,13 +111,13 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                             color: AppColors.description,
                           ),
                         ),
-                        SizedBox(width: 10),
+                        SizedBox(width: 10.w),
                         SizeSelector(),
                       ],
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                     Text('INGRIDENTS'),
-                    SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -130,7 +131,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                   ],
                 ),
               ),
@@ -139,11 +140,11 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
         ),
       ),
       bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 30),
-        height: 200,
+        padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 30.h),
+        height: 200.h,
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 209, 212, 220),
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
         ),
         child: Column(
           children: [
@@ -154,7 +155,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                 ProductCounter(),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             CustomButton(
               onPressed: () {
                 pushTo(context, CartScreen());

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/widgets/auth_background.dart';
 import '../../../core/widgets/custom_button.dart';
 import '../../../core/widgets/custom_text_field.dart';
 import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/features/home/screens/home_screen.dart';
+import 'package:food_app/features/auth/screens/verification_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -25,7 +27,7 @@ class SignUpScreen extends StatelessWidget {
               hint: 'John doe',
             ),
             
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             
             const CustomTextField(
               label: 'EMAIL',
@@ -33,34 +35,34 @@ class SignUpScreen extends StatelessWidget {
               keyboardType: TextInputType.emailAddress,
             ),
             
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             
             CustomTextField(
               label: 'PASSWORD',
               hint: '• • • • • • • • • •',
               obscureText: true,
-              suffixIcon: SvgPicture.asset('assets/icons/eye.svg', width: 24, height: 24),
+              suffixIcon: SvgPicture.asset('assets/icons/eye.svg', width: 24.w, height: 24.h),
             ),
             
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             
             CustomTextField(
               label: 'RE-TYPE PASSWORD',
               hint: '• • • • • • • • • •',
               obscureText: true,
-              suffixIcon: SvgPicture.asset('assets/icons/eye.svg', width: 24, height: 24),
+              suffixIcon: SvgPicture.asset('assets/icons/eye.svg', width: 24.w, height: 24.h),
             ),
             
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
             
             CustomButton(
               text: 'SIGN UP',
               onPressed: () {
-                pushReplacementTo(context, const HomeScreen());
+                pushTo(context, const VerificationScreen());
               },
             ),
             
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
@@ -18,19 +19,19 @@ class MyAddressScreen extends StatelessWidget {
       backgroundColor: AppColors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
               Row(
                 children: [
                   CustomBackButton(backgroundColor: AppColors.lightGrey),
-                  const SizedBox(width: 20),
-                  const Text("My Address", style: TextStyles.body2),
+                  SizedBox(width: 20.w),
+                  Text("My Address", style: TextStyles.body2.copyWith(fontSize: 18.sp)),
                 ],
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: 30.h),
 
               AddressCard(
                 title: "HOME",
@@ -52,7 +53,7 @@ class MyAddressScreen extends StatelessWidget {
                   pushTo(context, const AddAddressScreen());
                 },
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
             ],
           ),
         ),

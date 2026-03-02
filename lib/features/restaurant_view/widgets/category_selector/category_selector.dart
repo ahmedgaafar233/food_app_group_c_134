@@ -11,18 +11,19 @@ class CategorySelector extends StatefulWidget {
 }
 
 class _CategorySelectorState extends State<CategorySelector> {
-  int selectedIndex = -1;
+  int selectedIndex = 0;
+  final List<String> categories = ["Burger", "Sandwich", "Pizza", "Sandwich"];
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60.h,
+      height: 62.h,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemCount: 9,
-
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        itemCount: categories.length,
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
         separatorBuilder: (context, index) {
-          return SizedBox(width: 9);
+          return SizedBox(width: 12.w);
         },
         itemBuilder: (context, index) {
           return buildCategoryItem(index);
@@ -32,6 +33,7 @@ class _CategorySelectorState extends State<CategorySelector> {
   }
 
   GestureDetector buildCategoryItem(int index) {
+    bool isSelected = selectedIndex == index;
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -39,21 +41,20 @@ class _CategorySelectorState extends State<CategorySelector> {
         });
       },
       child: Container(
-        width: 90,
-        height: 60,
-        margin: EdgeInsets.all(5),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25.r),
-          color: selectedIndex == index ? AppColors.primary : AppColors.white,
-          boxShadow: [BoxShadow(color: AppColors.description, blurRadius: 3)],
+          color: isSelected ? AppColors.primary : AppColors.white,
+          border: Border.all(
+            color: isSelected ? AppColors.primary : const Color(0xffEDEDED),
+          ),
         ),
         child: Center(
           child: Text(
-            'Burger',
+            categories[index],
             style: TextStyles.caption.copyWith(
-              color: selectedIndex == index
-                  ? AppColors.white
-                  : AppColors.secondary,
+              color: isSelected ? AppColors.white : AppColors.secondary,
+              fontSize: 14.sp,
             ),
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/widgets/auth_background.dart';
 import '../../../core/widgets/custom_button.dart';
@@ -20,7 +21,7 @@ class ForgotPasswordScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
             
             const CustomTextField(
               label: 'EMAIL',
@@ -28,7 +29,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               keyboardType: TextInputType.emailAddress,
             ),
             
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
             
             CustomButton(
               text: 'SEND CODE',
@@ -36,7 +37,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 pushTo(context, const VerificationScreen());
               },
             ),
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/widgets/auth_background.dart';
@@ -31,17 +32,17 @@ class LoginEmptyScreen extends StatelessWidget {
               keyboardType: TextInputType.emailAddress,
             ),
             
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             
             // Password Field
             CustomTextField(
               label: 'PASSWORD',
               hint: '• • • • • • • • • •',
               obscureText: true,
-              suffixIcon: SvgPicture.asset('assets/icons/eye.svg', width: 24, height: 24),
+              suffixIcon: SvgPicture.asset('assets/icons/eye.svg', width: 24.w, height: 24.h),
             ),
             
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             
             // Remember me Row
             Row(
@@ -66,24 +67,24 @@ class LoginEmptyScreen extends StatelessWidget {
                     'Forgot Password',
                     style: GoogleFonts.sen(
                       color: const Color(0xFFFF7622),
-                      fontSize: 14,
+                      fontSize: 14.sp,
                     ),
                   ),
                 ),
               ],
             ),
             
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
             
             // Login Button
             CustomButton(
-              text: 'Log In',
+              text: 'LOG IN',
               onPressed: () {
                 pushReplacementTo(context, const HomeScreen());
               },
             ),
             
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             
             // Sign Up text
             Row(
@@ -93,7 +94,7 @@ class LoginEmptyScreen extends StatelessWidget {
                   "Don't have an account? ",
                   style: GoogleFonts.sen(
                     color: const Color(0xFF32343E), // dark text
-                    fontSize: 14,
+                    fontSize: 14.sp,
                   ),
                 ),
                 TextButton(

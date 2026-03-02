@@ -8,12 +8,14 @@ class CategoryList extends StatelessWidget {
   final List<String> categories;
   final List<String>? icons;
   final Function(String category)? onCategoryTap;
+  final int selectedIndex;
 
   const CategoryList({
     super.key,
     required this.categories,
     this.icons,
     this.onCategoryTap,
+    this.selectedIndex = -1,
   });
 
   @override
@@ -38,6 +40,9 @@ class CategoryList extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(24.r),
+                      border: selectedIndex == index
+                          ? Border.all(color: AppColors.primary, width: 2)
+                          : null,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withValues(alpha: 0.05),

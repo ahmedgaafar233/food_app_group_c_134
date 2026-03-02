@@ -8,13 +8,13 @@ class PopularFoodList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200.h,
+      height: 264.h,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: 2,
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
         separatorBuilder: (context, index) {
-          return SizedBox(width: 12.w);
+          return SizedBox(width: 20.w);
         },
         itemBuilder: (context, index) {
           return buildFoodItem();

@@ -10,7 +10,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/theme/themes.dart';
-import 'package:food_app/features/auth/screens/login_empty_screen.dart';
+import 'package:food_app/features/splash/splash_view.dart';
 //import 'core/utils/app_fonts.dart';
 
 void main() {
@@ -30,7 +30,7 @@ class FoodApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Food App Group C-134',
           theme: AppThemes.lightThemes,
-          home: LoginEmptyScreen(),
+          home: const SplashView(),
         );
       },
     );
