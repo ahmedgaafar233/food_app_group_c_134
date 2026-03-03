@@ -6,7 +6,6 @@ import '../../../core/widgets/auth_background.dart';
 import '../../../core/widgets/custom_button.dart';
 import '../../../core/widgets/custom_text_field.dart';
 import 'package:food_app/core/functions/navigations.dart';
-import 'package:food_app/features/home/screens/home_screen.dart';
 import 'package:food_app/features/auth/screens/verification_screen.dart';
 
 class SignUpScreen extends StatelessWidget {

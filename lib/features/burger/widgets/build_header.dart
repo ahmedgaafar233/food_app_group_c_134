@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_icons.dart';
-import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/circular_icon_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
 
