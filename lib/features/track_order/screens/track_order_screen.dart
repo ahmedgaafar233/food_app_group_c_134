@@ -21,9 +21,10 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          
           bottom: TabBar(
             indicatorColor: AppColors.primary,
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicatorPadding: EdgeInsetsGeometry.symmetric(horizontal: 20.w),
             labelColor: AppColors.primary,
             unselectedLabelColor: AppColors.description,
             labelStyle: TextStyles.body3.copyWith(fontSize: 14.sp),
@@ -35,8 +36,14 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
           ),
           backgroundColor: Colors.transparent,
           elevation: 0,
-          leading: CustomBackButton(backgroundColor: AppColors.iceBlue),
-          title: Text("My Orders", style: TextStyles.body2.copyWith(fontSize: 18.sp)),
+          leading: Padding(
+            padding: const EdgeInsets.all(6),
+            child: CustomBackButton(backgroundColor: AppColors.iceBlue),
+          ),
+          title: Text(
+            "My Orders",
+            style: TextStyles.body2.copyWith(fontSize: 18.sp),
+          ),
           actions: [
             ContainerButton(
               color: AppColors.iceBlue,
