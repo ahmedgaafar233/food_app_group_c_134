@@ -10,7 +10,8 @@ class ProductTrackCard extends StatelessWidget {
     required this.restaurantName,
     required this.price,
     required this.itemsCount,
-    required this.orderNumber, required this.itemIndex,
+    required this.orderNumber,
+    required this.itemIndex,
   });
   final String category;
   // final String imageUrl;
@@ -55,7 +56,7 @@ class ProductTrackCard extends StatelessWidget {
                     Text(restaurantName, style: TextStyles.body3),
                     Row(
                       children: [
-                        Text('\$ $price', style: TextStyles.captionB),
+                        Text('\$$price', style: TextStyles.captionB),
                         SizedBox(width: 8),
                         Text(
                           '|',
@@ -65,7 +66,12 @@ class ProductTrackCard extends StatelessWidget {
                         ),
                         SizedBox(width: 8),
 
-                        Text(itemsCount, style: TextStyles.caption),
+                        Text(
+                          itemsCount,
+                          style: TextStyles.caption.copyWith(
+                            color: AppColors.description,
+                          ),
+                        ),
                       ],
                     ),
                   ],
@@ -73,7 +79,9 @@ class ProductTrackCard extends StatelessWidget {
                 Spacer(),
                 Text(
                   '#$orderNumber',
-                  style: TextStyles.captionB.copyWith(color: AppColors.primary),
+                  style: TextStyles.captionB.copyWith(
+                    color: AppColors.description,
+                  ),
                 ),
               ],
             ),

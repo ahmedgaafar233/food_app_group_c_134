@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
-import 'package:food_app/core/utils/app_icons.dart';
 import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/container_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
 import 'package:food_app/features/restaurant_view/widgets/food_card_list/food_card_list.dart';
 import 'package:food_app/features/restaurant_view/widgets/category_selector/category_selector.dart';
 import 'package:food_app/features/restaurant_view/widgets/restaurant_info/restaurant_info_row.dart';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -73,7 +69,10 @@ class RestaurantScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24.w,
+                    vertical: 16.h,
+                  ),
                   child: Text(
                     'Burger (10)',
                     style: TextStyles.body.copyWith(

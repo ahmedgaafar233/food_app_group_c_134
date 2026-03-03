@@ -14,20 +14,23 @@ class ButtonCollection extends StatelessWidget {
 }
 
 List<Widget> buttonsStyles = [
-  Row(
-    children: [
-      Buttons(
-        backgroundColor: AppColors.primary,
-        text: 'Track Order',
-        textColor: Colors.white,
-      ),
-      Spacer(),
-      Buttons(
-        backgroundColor: Colors.transparent,
-        text: 'Cancel',
-        textColor: AppColors.primary,
-      ),
-    ],
+  Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Row(
+      children: [
+        Buttons(
+          backgroundColor: AppColors.primary,
+          text: 'Track Order',
+          textColor: Colors.white,
+        ),
+        Spacer(),
+        Buttons(
+          backgroundColor: Colors.transparent,
+          text: 'Cancel',
+          textColor: AppColors.primary,
+        ),
+      ],
+    ),
   ),
   Row(
     children: [
