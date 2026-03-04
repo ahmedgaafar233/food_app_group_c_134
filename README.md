@@ -4,11 +4,9 @@ A premium, modern food delivery application built with Flutter, designed to prov
 
 ## 🚀 Get Started
 
-### Download the App
-You can download and install the latest version of the app (APK) for Android here:
-[Download food APK (Release)](build/app/outputs/flutter-apk/app-release.apk)
 
 ---
+
 
 ## 👥 Team Credits (Group C 134)
 
