@@ -10,12 +10,12 @@ class AppColors {
   static const Color iceBlue = Color(0xFFF0F5FA);
   static const Color white = Color(0xFFFFFFFF);
   static const Color green = Color(0xFF059C6A);
-  static const Color lightGrey = Color.fromARGB(54, 184, 184, 184);
+  static const Color lightGrey = Color(0x36B8B8B8);
   static const Color purple = Color(0xffA03BB1);
   static const Color dark = Color(0xFF32343E);
   static const Color blue = Color(0xFF2E8EFF);
   static const Color red = Color(0xFFFF5252);
   static const Color yellow = Color(0xFFFFB01D);
   static const Color cyan = Color(0xFF33CEDB);
-  static const Color peach = Color(0xFFFFC6A8); 
+  static const Color peach = Color(0xFFFFC6A8);
 }
