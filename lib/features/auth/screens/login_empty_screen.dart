@@ -39,7 +39,6 @@ class LoginEmptyScreen extends StatelessWidget {
               label: 'PASSWORD',
               hint: '• • • • • • • • • •',
               obscureText: true,
-              suffixIcon: SvgPicture.asset('assets/icons/eye.svg', width: 24.w, height: 24.h),
             ),
             
             SizedBox(height: 12.h),

@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:food_app/core/utils/app_icons.dart';
 
-class SearchField extends StatelessWidget {
+class SearchField extends StatefulWidget {
   final String hintText;
   final VoidCallback? onTap;
   final bool readOnly;
@@ -25,15 +25,41 @@ class SearchField extends StatelessWidget {
   });
 
   @override
+  State<SearchField> createState() => _SearchFieldState();
+}
+
+class _SearchFieldState extends State<SearchField> {
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = widget.controller ?? TextEditingController();
+    _controller.addListener(_handleTextChanged);
+  }
+
+  void _handleTextChanged() {
+    setState(() {});
+  }
+
+  @override
+  void dispose() {
+    if (widget.controller == null) {
+      _controller.dispose();
+    }
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
-      readOnly: readOnly,
-      onTap: onTap,
-      onChanged: onChanged,
+      controller: _controller,
+      readOnly: widget.readOnly,
+      onTap: widget.onTap,
+      onChanged: widget.onChanged,
       style: GoogleFonts.sen(color: const Color(0xFF32343E), fontSize: 14.sp),
       decoration: InputDecoration(
-        hintText: hintText,
+        hintText: widget.hintText,
         hintStyle: GoogleFonts.sen(
           color: const Color(0xFFA0A5BA),
           fontSize: 14.sp,
@@ -42,7 +68,7 @@ class SearchField extends StatelessWidget {
         fillColor: const Color(0xFFF0F5FA),
         contentPadding: EdgeInsets.symmetric(
           horizontal: 16.w,
-          vertical: 14.h, // Adjusted to target 49h total (14*2 + 14 + line_height_buffer)
+          vertical: 14.h,
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.r),
@@ -59,7 +85,7 @@ class SearchField extends StatelessWidget {
         prefixIcon: Padding(
           padding: EdgeInsets.only(left: 16.w, right: 12.w),
           child:
-              prefixIcon ??
+              widget.prefixIcon ??
               SvgPicture.asset(
                 AppIcons.search,
                 width: 20.w,
@@ -74,7 +100,19 @@ class SearchField extends StatelessWidget {
           minWidth: 48.w,
           minHeight: 20.h,
         ),
-        suffixIcon: suffixIcon,
+        suffixIcon:
+            widget.suffixIcon ??
+            (_controller.text.isNotEmpty
+                ? IconButton(
+                  icon: const Icon(Icons.cancel, color: Color(0xFFB0B3C7), size: 18),
+                  onPressed: () {
+                    _controller.clear();
+                    if (widget.onChanged != null) {
+                      widget.onChanged!('');
+                    }
+                  },
+                )
+                : null),
       ),
     );
   }

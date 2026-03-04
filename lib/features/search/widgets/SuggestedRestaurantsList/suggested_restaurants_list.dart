@@ -5,6 +5,12 @@ import 'package:food_app/features/search/widgets/SuggestedRestaurantsList/build_
 class SuggestedRestaurantsList extends StatelessWidget {
   const SuggestedRestaurantsList({super.key});
 
+  static const List<Map<String, String>> restaurants = [
+    {"name": "Pansi Restaurant", "rating": "4.7"},
+    {"name": "American Spicy Burger Shop", "rating": "4.3"},
+    {"name": "Cafenio Coffee Club", "rating": "4.0"},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -15,10 +21,14 @@ class SuggestedRestaurantsList extends StatelessWidget {
         mainAxisSpacing: 16.h,
         mainAxisExtent: 82.h,
       ),
-      itemCount: 3,
+      itemCount: restaurants.length,
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       itemBuilder: (context, index) {
-        return buildRestaurantItem();
+        final restaurant = restaurants[index];
+        return buildRestaurantItem(
+          name: restaurant["name"]!,
+          rating: restaurant["rating"]!,
+        );
       },
     );
   }

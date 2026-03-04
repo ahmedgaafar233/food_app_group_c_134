@@ -46,22 +46,18 @@ class _CustomTextFieldState extends State<CustomTextField> {
       activeSuffixIcon = IconButton(
         icon: SvgPicture.asset(
           _obscured ? 'assets/icons/unseen.svg' : 'assets/icons/eye.svg',
-          width: 24.w,
-          height: 24.h,
+          width: 20.w,
+          height: 20.h,
+          colorFilter: const ColorFilter.mode(
+            Color(0xFF7E8CA0),
+            BlendMode.srcIn,
+          ),
         ),
-        tooltip: _obscured ? 'Show password' : 'Hide password',
         onPressed: () {
           setState(() {
             _obscured = !_obscured;
           });
         },
-      );
-    }
-
-    if (activeSuffixIcon != null) {
-      activeSuffixIcon = Padding(
-        padding: EdgeInsets.all(12.r),
-        child: activeSuffixIcon,
       );
     }
 
@@ -100,7 +96,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ),
             contentPadding: EdgeInsets.symmetric(
               horizontal: 16.w,
-              vertical: 16.h,
+              vertical: 12.h,
             ),
           ),
         ),

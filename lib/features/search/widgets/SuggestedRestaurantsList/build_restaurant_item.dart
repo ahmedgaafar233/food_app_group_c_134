@@ -5,7 +5,10 @@ import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/icon_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget buildRestaurantItem() => Column(
+Widget buildRestaurantItem({
+  required String name,
+  required String rating,
+}) => Column(
   children: [
     Expanded(
       child: Row(
@@ -15,7 +18,7 @@ Widget buildRestaurantItem() => Column(
             height: 60.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.r),
-              color: AppColors.description,
+              color: AppColors.description.withValues(alpha: 0.2),
             ),
           ),
           SizedBox(width: 12.w),
@@ -25,7 +28,7 @@ Widget buildRestaurantItem() => Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Pansi Restaurant",
+                  name,
                   style: GoogleFonts.sen(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w400,
@@ -35,7 +38,7 @@ Widget buildRestaurantItem() => Column(
                 SizedBox(height: 4.h),
                 IconText(
                   iconPath: AppImages.star,
-                  text: "4.7",
+                  text: rating,
                   textStyle: GoogleFonts.sen(
                     color: const Color(0xFF181C2E),
                     fontSize: 14.sp,

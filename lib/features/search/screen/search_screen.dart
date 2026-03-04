@@ -5,6 +5,8 @@ import 'package:food_app/core/utils/app_images.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
 import 'package:food_app/core/widgets/custom_badge_button.dart';
 import 'package:food_app/core/widgets/search_field.dart';
+import 'package:food_app/features/cart/screens/cart_screen.dart';
+import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/features/search/widgets/PopularFoodList/popular_food_list.dart';
 import 'package:food_app/features/search/widgets/RecentKeywordsList/recent_keywords_list.dart';
 import 'package:food_app/features/search/widgets/SuggestedRestaurantsList/suggested_restaurants_list.dart';
@@ -42,7 +44,9 @@ class SearchScreen extends StatelessWidget {
                     CustomBadgeButton(
                       iconPath: AppImages.shoppingBag,
                       itemCount: 2,
-                      onPressed: () {},
+                      onPressed: () {
+                        pushTo(context, const CartScreen());
+                      },
                     ),
                   ],
                 ),

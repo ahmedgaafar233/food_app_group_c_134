@@ -10,6 +10,9 @@ import 'package:food_app/features/menu/screens/personal_info_screen.dart';
 import 'package:food_app/features/menu/widgets/card_background.dart';
 import 'package:food_app/features/menu/widgets/profile_menu_item.dart';
 import 'package:food_app/features/address/screens/my_address_screen.dart';
+import 'package:food_app/features/auth/screens/login_empty_screen.dart';
+import 'package:food_app/features/cart/screens/cart_screen.dart';
+import 'package:food_app/features/payment/screens/payment_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -25,7 +28,12 @@ class ProfileScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const CustomBackButton(backgroundColor: AppColors.iceBlue),
+                   CustomBackButton(
+                    backgroundColor: AppColors.iceBlue,
+                    onPressed: () {
+                      pushTo(context, const LoginEmptyScreen());
+                    },
+                  ),
                   SizedBox(width: 16.w),
                   Text("Profile", style: TextStyles.body2),
                   const Spacer(),
@@ -100,7 +108,9 @@ class ProfileScreen extends StatelessWidget {
                       icon: AppIcons.cart,
                       text: 'Cart',
                       color: AppColors.blue,
-                      onPressed: () {},
+                      onPressed: () {
+                        pushTo(context, const CartScreen());
+                      },
                     ),
                     ProfileMenuItem(
                       icon: AppIcons.heart,
@@ -118,7 +128,9 @@ class ProfileScreen extends StatelessWidget {
                       icon: AppIcons.creditCard,
                       color: AppColors.blue,
                       text: 'Payment Method',
-                      onPressed: () {},
+                      onPressed: () {
+                        pushTo(context, const PaymentScreen());
+                      },
                     ),
                   ],
                 ),
@@ -164,7 +176,9 @@ class ProfileScreen extends StatelessWidget {
                       icon: AppIcons.logout,
                       text: 'Log Out',
                       color: AppColors.red,
-                      onPressed: () {},
+                      onPressed: () {
+                        pushTo(context, const LoginEmptyScreen());
+                      },
                     ),
                   ],
                 ),
