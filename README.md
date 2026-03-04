@@ -8,7 +8,9 @@ A premium, modern food delivery application built with Flutter, designed to prov
 
 ## 📱 App Demo Video
 
-<video src="screenshots/app_demo.mp4" controls width="100%"></video>
+<div align="center">
+  <video src="screenshots/app_demo.mp4" type="video/mp4" controls="controls" style="max-width: 100%; height: auto;"></video>
+</div>
 
 ---
 
