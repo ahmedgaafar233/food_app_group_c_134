@@ -40,7 +40,6 @@ class SignUpScreen extends StatelessWidget {
               label: 'PASSWORD',
               hint: '• • • • • • • • • •',
               obscureText: true,
-              suffixIcon: SvgPicture.asset('assets/icons/eye.svg', width: 24.w, height: 24.h),
             ),
             
             SizedBox(height: 16.h),
@@ -49,7 +48,6 @@ class SignUpScreen extends StatelessWidget {
               label: 'RE-TYPE PASSWORD',
               hint: '• • • • • • • • • •',
               obscureText: true,
-              suffixIcon: SvgPicture.asset('assets/icons/eye.svg', width: 24.w, height: 24.h),
             ),
             
             SizedBox(height: 40.h),

@@ -12,8 +12,10 @@ class ProductTrackCard extends StatelessWidget {
     required this.itemsCount,
     required this.orderNumber,
     required this.itemIndex,
+    this.status,
   });
   final String category;
+  final String? status;
   // final String imageUrl;
   final String restaurantName;
   final String price;
@@ -28,7 +30,25 @@ class ProductTrackCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(children: [Text(category, style: TextStyles.body3)]),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(category, style: TextStyles.body3),
+            if (status != null) ...[
+              SizedBox(width: 40),
+              Text(
+                status!,
+                style: TextStyles.body3.copyWith(
+                  color: status!.toLowerCase() == 'completed'
+                      ? AppColors.green
+                      : status!.toLowerCase() == 'canceled'
+                          ? AppColors.red
+                          : AppColors.description,
+                ),
+              ),
+            ],
+          ],
+        ),
         SizedBox(height: 20),
         Column(
           children: [
@@ -79,7 +99,8 @@ class ProductTrackCard extends StatelessWidget {
                 Spacer(),
                 Text(
                   '#$orderNumber',
-                  style: TextStyles.captionB.copyWith(color: AppColors.primary),
+                  style:
+                      TextStyles.caption.copyWith(color: AppColors.description),
                 ),
               ],
             ),

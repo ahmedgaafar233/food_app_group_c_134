@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/core/functions/navigations.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:food_app/core/styles/text_styles.dart';
 import 'package:food_app/core/utils/app_icons.dart';
 import 'package:food_app/core/widgets/circular_icon_button.dart';
 import 'package:food_app/core/widgets/custom_back_button.dart';
+import 'package:food_app/features/search/screen/search_screen.dart';
 
 class BuildHeader extends StatelessWidget {
   const BuildHeader({super.key, required this.context});
@@ -35,6 +37,9 @@ class BuildHeader extends StatelessWidget {
           backgroundColor: AppColors.secondary,
           iconColor: Colors.white,
           iconSize: 20,
+          onPressed: () {
+            pushTo(context, const SearchScreen());
+          },
         ),
         const SizedBox(width: 10),
         CircularIconButton(

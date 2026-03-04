@@ -3,7 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/core/styles/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget buildFoodItem() => Container(
+Widget buildFoodItem({
+  required String title,
+  required String subtitle,
+}) => Container(
   width: 153.w,
   decoration: BoxDecoration(
     borderRadius: BorderRadius.circular(24.r),
@@ -24,7 +27,7 @@ Widget buildFoodItem() => Container(
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24.r),
-          color: AppColors.description, // Image placeholder
+          color: AppColors.description.withValues(alpha: 0.2), // Image placeholder
         ),
       ),
       Padding(
@@ -33,7 +36,7 @@ Widget buildFoodItem() => Container(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "European Pizza",
+              title,
               style: GoogleFonts.sen(
                 fontSize: 15.sp,
                 fontWeight: FontWeight.bold,
@@ -42,7 +45,7 @@ Widget buildFoodItem() => Container(
             ),
             SizedBox(height: 4.h),
             Text(
-              "Uttora Coffe House",
+              subtitle,
               style: GoogleFonts.sen(
                 fontSize: 12.sp,
                 color: const Color(0xFF646982),
