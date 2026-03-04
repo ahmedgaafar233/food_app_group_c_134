@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Food App - Group C 134 Presentation</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
+
+		<!-- Custom Premium Theme -->
+		<style>
+			:root {
+				--r-main-color: #ffffff;
+				--r-heading-color: #FF7622;
+				--r-link-color: #FF7622;
+				--r-selection-background-color: #FF7622;
+				--r-selection-color: #fff;
+				--brand-orange: #FF7622;
+				--brand-dark: #121223;
+			}
+			.reveal {
+				background-color: var(--brand-dark);
+			}
+			.reveal h1, .reveal h2, .reveal h3 {
+				text-transform: none;
+				font-family: 'Outfit', sans-serif;
+			}
+			.reveal section img {
+				border: 4px solid var(--brand-orange);
+				border-radius: 12px;
+				box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+			}
+			.team-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 20px;
+				font-size: 0.7em;
+			}
+			.feature-card {
+				background: rgba(255,255,255,0.05);
+				padding: 15px;
+				border-radius: 10px;
+				border-left: 5px solid var(--brand-orange);
+				text-align: left;
+			}
+			.highlight { color: var(--brand-orange); font-weight: bold; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<!-- Slide 1: Welcome -->
+				<section data-background-gradient="linear-gradient(to bottom, #121223, #1e1e30)">
+					<h1 style="color: var(--brand-orange);">Food App 🍔</h1>
+					<h3>A Premium Delivery Experience</h3>
+					<p style="font-size: 0.8em; margin-top: 40px;">
+						Presented by <span class="highlight">Group C 134</span><br>
+						Supervised by: Eng. Sayed Abdul-Aziz & Eng. Abdalrahman Nasser
+					</p>
+				</section>
+
+				<!-- Slide 2: The Vision -->
+				<section>
+					<h2>The Vision</h2>
+					<div style="display: flex; align-items: center; gap: 30px;">
+						<div style="flex: 1; text-align: left;">
+							<p>Modern users demand <span class="highlight">speed</span>, <span class="highlight">beauty</span>, and <span class="highlight">simplicity</span>.</p>
+							<ul>
+								<li>Pixel-perfect UI/UX</li>
+								<li>High-end Branding</li>
+								<li>Seamless Navigation</li>
+							</ul>
+						</div>
+						<div style="flex: 1;">
+							<img src="screenshots/Home V.3.jpeg" height="450" alt="Home Screen">
+						</div>
+					</div>
+				</section>
+
+				<!-- Slide 3: Visual Identity -->
+				<section>
+					<h2>Visual Identity</h2>
+					<div style="display: flex; justify-content: space-around; margin-top: 20px;">
+						<div class="feature-card">
+							<h4>Typography</h4>
+							<p>Outfit / Inter<br>Sharp & Accessible</p>
+						</div>
+						<div class="feature-card">
+							<h4>Colors</h4>
+							<div style="display: flex; gap: 10px;">
+								<div style="width: 30px; height: 30px; background: #FF7622; border-radius: 50%;"></div>
+								<div style="width: 30px; height: 30px; background: #121223; border-radius: 50%;"></div>
+								<div style="width: 30px; height: 30px; background: #A0A5BA; border-radius: 50%;"></div>
+							</div>
+						</div>
+					</div>
+					<img src="screenshots/Splash Page_02.jpeg" height="300" style="margin-top: 30px;" alt="Splash">
+				</section>
+
+				<!-- Slide 4: Authentication Flow -->
+				<section>
+					<h3>Secure & Fast Onboarding</h3>
+					<div style="display: flex; gap: 15px;">
+						<img src="screenshots/Log In_Empty.jpeg" height="400" alt="Login">
+						<img src="screenshots/Sign Up .jpeg" height="400" alt="Signup">
+						<img src="screenshots/Verification.jpeg" height="400" alt="Verification">
+					</div>
+					<p style="font-size: 0.6em;">Complete flow with Email Verification & Password Recovery</p>
+				</section>
+
+				<!-- Slide 5: Core Features -->
+				<section>
+					<h2>Core Experience</h2>
+					<div class="team-grid">
+						<div class="feature-card">
+							<p><span class="highlight">Smart Search:</span> Keywords & popular suggestions.</p>
+						</div>
+						<div class="feature-card">
+							<p><span class="highlight">Cart Management:</span> Intuitive item adding/removing.</p>
+						</div>
+						<div class="feature-card">
+							<p><span class="highlight">Order Tracking:</span> Real-time status updates.</p>
+						</div>
+						<div class="feature-card">
+							<p><span class="highlight">Profile Control:</span> easy account & address management.</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Slide 6: The Team -->
+				<section>
+					<h2>The Dream Team</h2>
+					<div class="team-grid">
+						<div class="feature-card">
+							<p><strong>Ahmed Gaafar (Leader)</strong><br>Auth, Home V.3, Identity, Integration.</p>
+						</div>
+						<div class="feature-card">
+							<p><strong>Ahmed Iraqey</strong><br>Cart, Payments, Order Success, Tracking.</p>
+						</div>
+						<div class="feature-card">
+							<p><strong>Bola Atef</strong><br>Search, Restaurant View, Menu, Profiles.</p>
+						</div>
+						<div class="feature-card">
+							<p><strong>Mona Ayad</strong><br>Category Screens, Address Management.</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Slide 7: Technical Excellence -->
+				<section>
+					<h2>Technical Excellence</h2>
+					<ul style="font-size: 0.8em;">
+						<li><span class="highlight">Scalable Architecture:</span> Modular feature-based folder structure.</li>
+						<li><span class="highlight">Responsiveness:</span> Fluid layouts using ScreenUtil.</li>
+						<li><span class="highlight">Collaboration:</span> Advanced Git workflow & Peer Reviews.</li>
+						<li><span class="highlight">Performance:</span> SVG assets for sharp rendering.</li>
+					</ul>
+				</section>
+
+				<!-- Slide 8: Thank You -->
+				<section data-background-color="#FF7622">
+					<h1 style="color: white;">Thank You!</h1>
+					<p style="color: white;">Questions? 🍔</p>
+					<div style="background: white; color: #121223; padding: 20px; border-radius: 15px; display: inline-block; margin-top: 30px;">
+						<p style="font-size: 0.7em; margin: 0;"><b>Food App v1.0</b> | Group C 134</p>
+					</div>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				center: true,
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+				controls: true,
+				progress: true,
+				mouseWheel: true
+			});
+		</script>
+	</body>
+</html>
